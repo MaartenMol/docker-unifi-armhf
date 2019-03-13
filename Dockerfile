@@ -3,11 +3,11 @@ FROM lsiobase/ubuntu.armhf:xenial
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs"
+LABEL build_version="Unifi SDN Controller version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="Maarten Mol"
 
 # package versions
-ARG UNIFI_VER="5.10.12"
+ARG UNIFI_VER="5.10.20"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
