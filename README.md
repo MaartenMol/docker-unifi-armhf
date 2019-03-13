@@ -1,18 +1,4 @@
-[linuxserverurl]: https://linuxserver.io
-[forumurl]: https://forum.linuxserver.io
-[ircurl]: https://www.linuxserver.io/irc/
-[podcasturl]: https://www.linuxserver.io/podcast/
-[appurl]: https://www.ubnt.com/enterprise/#unifi
-[hub]: https://hub.docker.com/r/lsioarmhf/unifi/
-
-[![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
-
-The [LinuxServer.io][linuxserverurl] team brings you another container release featuring easy user mapping and community support. Find us for support at:
-* [forum.linuxserver.io][forumurl]
-* [IRC][ircurl] on freenode at `#linuxserver.io`
-* [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
-
-# lsioarmhf/unifi
+# maartenmol/unifi-armhf
 [![](https://images.microbadger.com/badges/version/lsioarmhf/unifi.svg)](https://microbadger.com/images/lsioarmhf/unifi "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/lsioarmhf/unifi.svg)](https://microbadger.com/images/lsioarmhf/unifi "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/lsioarmhf/unifi.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/lsioarmhf/unifi.svg)][hub][![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Builders/armhf/armhf-unifi)](https://ci.linuxserver.io/job/Docker-Builders/job/armhf/job/armhf-unifi/)
 
 The UniFi® Controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance. [Unifi](https://www.ubnt.com/enterprise/#unifi)
@@ -34,16 +20,15 @@ docker create \
   -p 8843:8843 \
   -p 8880:8880 \
   -p 6789:6789 \
-  lsioarmhf/unifi
+  maartenmol/unifi-armhf
 ```
 
-You can choose between ,using tags, latest (default lts 5.6 release branch, and no tag required)  or the unstable (5.7) release branch of unifi.
-
-Add one of the tags, if required, to the linuxserver/unifi line of the run/create command in the following format, linuxserver/unifi:unstable
+Add one of the tags, if required, to the maartenmol/unifi-armhf line of the run/create command in the following format, maartenmol/unifi-armhf:unstable
 
 #### Tags
 
-+ **unstable** : releases from the 5.9x branch.
++ **latest**  : releases from 5.10.x stable branch
++ **unstable** : releases from the 5.10.x beta branch
 
 ## Parameters
 
@@ -106,23 +91,4 @@ Use `ubnt` as the password to login and `$address` is the IP address of the host
 
 * image version number
 
-`docker inspect -f '{{ index .Config.Labels "build_version" }}' lsioarmhf/unifi`
-
-## Versions
-
-+ **14.09.18:** Update to 5.6.40.
-+ **06.07.18:** Update to 5.6.39.
-+ **24.03.18:** Update to 5.6.37.
-+ **24.03.18:** Update to 5.6.36.
-+ **14.03.18:** Add unstable branch for 5.7x releases.
-+ **19.02.18:** Add port 6789 to support throughput test.
-+ **09.02.18:** Update to 5.6.30.
-+ **08.02.18:** Use loop to simplify symlinks.
-+ **09.01.18:** Update to 5.6.29.
-+ **15.12.17:** Update to 5.6.26.
-+ **12.11.17:** Add STUN server port 3478 mapping to example.
-+ **11.11.17:** Update to 5.6.22.
-+ **22.10.17:** Fix typos in Dockerfile and cert gen.
-+ **07.10.17:** Update to 5.5.24.
-+ **03.08.17:** Update to 5.5.20.
-+ **16.07.16** Initial Release.
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' maartenmol/unifi-armhf`
