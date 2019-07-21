@@ -7,7 +7,7 @@ LABEL build_version="Unifi SDN Controller version:- ${VERSION} Build-date:- ${BU
 LABEL maintainer="Maarten Mol"
 
 # package versions
-ARG UNIFI_VER="5.10.24"
+ARG UNIFI_VER="5.10.25"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
