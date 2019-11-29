@@ -1,3 +1,7 @@
+FROM arm32v7/debian:stretch-slim AS builder
+COPY qemu-arm-static /usr/bin
+ENTRYPOINT ["sh","/run.sh"]
+
 FROM lsiobase/ubuntu.armhf:xenial
 
 # set version label
@@ -7,7 +11,7 @@ LABEL build_version="Unifi SDN Controller version:- ${VERSION} Build-date:- ${BU
 LABEL maintainer="Maarten Mol"
 
 # package versions
-ARG UNIFI_VER="5.12.22"
+ARG UNIFI_VER="5.12.35"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
