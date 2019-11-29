@@ -1,5 +1,6 @@
 FROM arm32v7/debian:stretch-slim AS builder
 COPY qemu-arm-static /usr/bin
+ENTRYPOINT ["sh","/run.sh"]
 
 FROM lsiobase/ubuntu.armhf:xenial
 
